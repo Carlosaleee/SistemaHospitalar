@@ -45,7 +45,7 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
         jtTelefone = new javax.swing.JTextField();
         jlTelefone = new javax.swing.JLabel();
         jlEmail1 = new javax.swing.JLabel();
-        jtEmail1 = new javax.swing.JTextField();
+        jtEmail = new javax.swing.JTextField();
         jlRG = new javax.swing.JLabel();
         jtRG = new javax.swing.JTextField();
         jcConvenio = new javax.swing.JComboBox<>();
@@ -99,11 +99,17 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
         jLayeredPane1.add(jlTelefone);
         jlTelefone.setBounds(40, 180, 50, 30);
 
-        jlEmail1.setText("E-mal");
+        jlEmail1.setText("E-mail");
         jLayeredPane1.add(jlEmail1);
         jlEmail1.setBounds(40, 220, 90, 30);
-        jLayeredPane1.add(jtEmail1);
-        jtEmail1.setBounds(140, 220, 210, 30);
+
+        jtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtEmailActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(jtEmail);
+        jtEmail.setBounds(140, 220, 210, 30);
 
         jlRG.setText("RG");
         jLayeredPane1.add(jlRG);
@@ -161,6 +167,10 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtEmailActionPerformed
+
     private void cadastrar() {
         try {
 
@@ -172,6 +182,7 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
             pac.setNome(jtNome.getText());
             pac.setEndereco(jtEndereco.getText());
             pac.setDataNascimento(sdf.parse(jtDataNasc.getText()));
+            pac.setEmail(jtEmail.getText());
             pac.setTelefone(jtTelefone.getText());
             pac.setCpf(jtCpf.getText());
             pac.setRg(jtRG.getText());
@@ -213,8 +224,15 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
     //apaga valores dos campos
     private void limpar() {
         jtNome.setText("");
-        jtEndereco.setText("");
         jtCpf.setText("");
+        jtRG.setText("");
+        jtEndereco.setText("");
+        jtDataNasc.setText("");
+        jtTelefone.setText("");
+        jtEmail.setText("");
+        
+        
+        
     }// fecha método
 
     
@@ -274,7 +292,7 @@ public class GuiCadPaciente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlTelefone;
     private javax.swing.JTextField jtCpf;
     private javax.swing.JTextField jtDataNasc;
-    private javax.swing.JTextField jtEmail1;
+    private javax.swing.JTextField jtEmail;
     private javax.swing.JTextField jtEndereco;
     private javax.swing.JTextField jtNome;
     private javax.swing.JTextField jtRG;
