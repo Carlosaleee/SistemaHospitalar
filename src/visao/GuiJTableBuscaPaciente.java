@@ -276,4 +276,8 @@ public class GuiJTableBuscaPaciente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtFiltro;
     private javax.swing.JTable jtablePaciente;
     // End of variables declaration//GEN-END:variables
+
+public javax.swing.JTable getJtablePaciente() {
+    return jtablePaciente;
+}
 }
